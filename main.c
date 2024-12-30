@@ -33,5 +33,5 @@ int main (int argc, char **argv)
 		else
 			big_sort(&a, &b);
 	}
-	freestack(&a);
+	free_stack(&a);
 }
