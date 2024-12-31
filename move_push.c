@@ -6,21 +6,44 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 12:17:03 by ekashirs          #+#    #+#             */
-/*   Updated: 2024/12/27 16:47:44 by ekashirs         ###   ########.fr       */
+/*   Updated: 2024/12/31 13:23:30 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	push()
+#include "push_swap.h"
+
+static void	push(t_node **dest, t_node **src)
 {
-	
+	t_node	*pushing_node;
+
+	if (NULL == *src)
+		return ;
+	pushing_node = *src;
+	*src = (*src)->next;
+	if (*src)
+		(*src)->prev = NULL;
+	pushing_node->prev = NULL;
+	if (NULL == *dest)
+	{
+		*dest = pushing_node;
+		pushing_node->next = NULL;
+	}
+	else
+	{
+		pushing_node->next = *dest;
+		pushing_node->next->prev = pushing_node;
+		*dest = pushing_node;
+	}
 }
 
-void    pa()
+void    pa(t_node **a, t_node **b)
 {
-
+	push(a, b);
+	write (1, "pa\n", 3);
 }
 
-void    pb()
+void    pb(t_node **b, t_node **a)
 {
-
+	push(b, a);
+	write (1, "pb\n", 3);
 }
