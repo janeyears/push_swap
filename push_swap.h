@@ -29,7 +29,7 @@ typedef struct s_node
 	struct s_node	*prev;
 }	t_node;
 
-char	**split(char const *s, char c);
+char	**ft_split(char *str, char separator);
 
 //*** Error handling and free ***
 

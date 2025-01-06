@@ -32,7 +32,7 @@ static size_t	ft_countword(char const *s, char c)
 	return (count);
 }
 
-static char	*ft_fill_arr(char const *s, char c)
+static char	*ft_fill_arr(char *s, char c)
 {
 	static int	cursor = 0;
 	char	*next_str;
@@ -54,30 +54,30 @@ static char	*ft_fill_arr(char const *s, char c)
 	return (next_str);
 }
 
-char	**split(char const *s, char c)
+char	**ft_split(char *str, char separator)
 {
-	size_t	word_count;
+	int		words_number;
 	char	**arr;
 	int		i;
 
 	i = 0;
-	if (s == NULL)
+	words_number = ft_countword(str, separator);
+	if (!words_number)
+		exit(1);
+	arr = malloc(sizeof(char *) * (size_t)(words_number + 2));
+	if (NULL == arr)
 		return (NULL);
-	word_count = ft_countword(s, c);
-	arr = malloc((word_count + 2) * sizeof(char *));
-	if (arr == NULL)
-		return (NULL);
-	while (word_count-- >= 0)
+	while (words_number-- >= 0)
 	{
-		if (i == 0)
+		if (0 == i)
 		{
 			arr[i] = malloc(sizeof(char));
-			if (arr[i] == NULL)
+			if (NULL == arr[i])
 				return (NULL);
 			arr[i++][0] = '\0';
-			continue;
+			continue ;
 		}
-		arr[i++] = ft_fill_arr(s, c);
+		arr[i++] = ft_fill_arr(str, separator);
 	}
 	arr[i] = NULL;
 	return (arr);
