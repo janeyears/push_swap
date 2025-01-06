@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <unistd.h>
 
 static void	reverse_rotate(t_node **stack)
 {
@@ -18,7 +19,7 @@ static void	reverse_rotate(t_node **stack)
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 		return ;
-	last_node = find_last_node(*stack);
+	last_node = find_last(*stack);
 	last_node->prev->next = NULL;
 	last_node->next = *stack;
 	last_node->prev = NULL;

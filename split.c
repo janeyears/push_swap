@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stddef.h>
 
 static size_t	ft_countword(char const *s, char c)
 {
@@ -31,7 +32,7 @@ static size_t	ft_countword(char const *s, char c)
 	return (count);
 }
 
-static char	ft_fill_arr(char const *s, char c)
+static char	*ft_fill_arr(char const *s, char c)
 {
 	static int	cursor = 0;
 	char	*next_str;
@@ -68,7 +69,7 @@ char	**split(char const *s, char c)
 		return (NULL);
 	while (word_count-- >= 0)
 	{
-		if (i = 0)
+		if (i == 0)
 		{
 			arr[i] = malloc(sizeof(char));
 			if (arr[i] == NULL)

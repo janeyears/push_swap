@@ -21,7 +21,6 @@ typedef struct s_node
 {
 	int				value;
 	int				cur_position;
-	int				final_index;
 	int				cost;
 	bool			above_median;
 	bool			cheapest;
@@ -29,6 +28,8 @@ typedef struct s_node
 	struct s_node	*next;
 	struct s_node	*prev;
 }	t_node;
+
+char	**split(char const *s, char c);
 
 //*** Error handling and free ***
 
@@ -38,24 +39,42 @@ void	error_and_free(t_node **a, char **argv, bool flag_2_ac);
 int	error_syntax(char *c);
 int	check_duplicate(t_node *a, int nbr);
 
-//*** Initializing a stack ***
+//*** Creation of a stack ***
 
 void	init_a(t_node **a, char **argv, bool flag_2_ac);
+void	set_nodes(t_node *a, t_node *b);
+void	set_cheapest (t_node *b);
+void	set_cost(t_node *a, t_node *b);
+void	set_cur_position(t_node *stack);
+
+//*** Linked list manipulations ***
+
+t_node	*find_last(t_node *lst);
+t_node	*find_smallest(t_node *stack);
 void	create_node(t_node **stack, int nbr);
-t_node	*ft_find_last(t_node *lst);
+t_node	*return_cheapest(t_node *stack);
+int stack_len(t_node *stack);
+void	bring_to_top(t_node **stack, t_node *top_node, char stack_name);
+bool	sorted(t_node *stack);
+
+//*** Algorithm ***
+
+void	sort_three(t_node **a);
+void	sort_five (t_node **a, t_node **b);
+void	push_swap(t_node **a, t_node **b);
 
 //*** Stacks moves ***
 
-void    pa(t_node **a, t_node **b);
-void    pb(t_node **b, t_node **a);
-void    ra(t_node **a);
-void    rb(t_node **b);
-void    rr(t_node **a, t_node **b);
-void    rra(t_node **a);
-void    rrb(t_node **b);
-void    rrr(t_node **a, t_node **b);
-void    sa(t_node **a);
-void    sb(t_node **b);
-void    ss(t_node **a, t_node **b);
+void	pa(t_node **a, t_node **b);
+void	pb(t_node **b, t_node **a);
+void	ra(t_node **a);
+void	rb(t_node **b);
+void	rr(t_node **a, t_node **b);
+void	rra(t_node **a);
+void	rrb(t_node **b);
+void	rrr(t_node **a, t_node **b);
+void	sa(t_node **a);
+void	sb(t_node **b);
+void	ss(t_node **a, t_node **b);
 
 #endif

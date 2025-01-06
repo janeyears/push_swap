@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <unistd.h>
 
 static void	swap(t_node **stack_head)
 {
@@ -26,19 +27,19 @@ static void	swap(t_node **stack_head)
 	(*stack_head)->prev = NULL;
 }
 
-void    sa(t_node **a)
+void	sa(t_node **a)
 {
 	swap(a);
 	write (1, "sa\n", 3);
 }
 
-void    sb(t_node **b)
+void	sb(t_node **b)
 {
 	swap(b);
 	write (1, "sb\n", 3);
 }
 
-void    ss(t_node **a, t_node **b)
+void	ss(t_node **a, t_node **b)
 {
 	swap(a);
 	swap(b);

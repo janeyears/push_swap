@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <unistd.h>
 
 static void	rotate(t_node **stack)
 {
@@ -18,7 +19,7 @@ static void	rotate(t_node **stack)
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 		return ;
-	last_node = ft_find_last(*stack);
+	last_node = find_last(*stack);
 	last_node->next = *stack;
 	*stack = (*stack)->next;
 	(*stack)->prev = NULL;

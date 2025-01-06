@@ -24,14 +24,15 @@ int main (int argc, char **argv)
 	else if (argc == 2)
 		argv = split(argv[1], ' ');
 	init_a(&a, argv + 1, argc == 2);
-	if (!stack_is_sorted(a))
+	if (!sorted(a))
 	{
-		if (stacklen(a) == 2)
+		if (stack_len(a) == 2)
 			sa(&a);
 		else if (stack_len(a) == 3)
 			sort_three(&a);
 		else
-			big_sort(&a, &b);
+			push_swap(&a, &b);
 	}
 	free_stack(&a);
 }
+

@@ -12,13 +12,32 @@
 
 #include "push_swap.h"
 
-t_node	*ft_find_last(t_node *lst)
+t_node	*find_last(t_node *lst)
 {
 	if (lst == NULL)
 		return (NULL);
 	while (lst->next)
 		lst = lst->next;
 	return (lst);
+}
+t_node	*find_smallest(t_node *stack)
+{
+	long			smallest;
+	t_node	*smallest_node;
+
+	if (stack == NULL)
+		return (NULL);
+	smallest = LONG_MAX;
+	while (stack)
+	{
+		if (stack->value < smallest)
+		{
+			smallest = stack->value;
+			smallest_node = stack;
+		}
+		stack = stack->next;
+	}
+	return (smallest_node);
 }
 
 static long	ft_atol(const char *str)
@@ -68,7 +87,7 @@ void	create_node(t_node **stack, int nbr)
 	}
 	else 
 	{
-		last_node = ft_find_last(*stack);
+		last_node = find_last(*stack);
 		last_node->next = new_node;
 		new_node->prev = last_node;
 	}
@@ -86,9 +105,9 @@ void	init_a(t_node **a, char **argv, bool flag_2_ac)
 			error_and_free(a, argv, flag_2_ac);
 		nbr = ft_atol(argv[i]);
 		if (nbr > INT_MAX || nbr < INT_MIN)
-			error_and_free (a, argv, flag_2_ac);
-		if (check_dublicate (*a, (int)nbr))
-			error_and_free (a, argv, flag_2_ac);
+			error_and_free(a, argv, flag_2_ac);
+		if (check_duplicate(*a, (int)nbr))
+			error_and_free(a, argv, flag_2_ac);
 		create_node(a, (int)nbr);
 		i++;
 	}
