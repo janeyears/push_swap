@@ -6,7 +6,7 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 13:47:32 by ekashirs          #+#    #+#             */
-/*   Updated: 2024/12/27 14:25:42 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/01/07 16:20:11 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,13 @@ static size_t	ft_countword(char const *s, char c)
 static char	*ft_fill_arr(char *s, char c)
 {
 	static int	cursor = 0;
-	char	*next_str;
-	size_t	len;
-	int		i;
+	char		*next_str;
+	size_t		len;
+	int			i;
 
 	i = 0;
 	len = 0;
-	while(s[cursor] == c)
+	while (s[cursor] == c)
 		cursor++;
 	while ((s[cursor + len] != c) && s[cursor + len])
 		len++;

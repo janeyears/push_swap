@@ -6,13 +6,13 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 12:16:56 by ekashirs          #+#    #+#             */
-/*   Updated: 2024/12/27 16:30:39 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/01/07 12:44:35 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main (int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_node	*a;
 	t_node	*b;
@@ -35,4 +35,3 @@ int main (int argc, char **argv)
 	}
 	free_stack(&a);
 }
-

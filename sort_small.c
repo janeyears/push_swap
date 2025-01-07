@@ -1,21 +1,34 @@
-#include "push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_small.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/07 11:57:50 by ekashirs          #+#    #+#             */
+/*   Updated: 2025/01/07 16:19:46 by ekashirs         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-bool    sorted(t_node *stack)
+#include "push_swap.h"
+#include <limits.h>
+
+bool	sorted(t_node *stack)
 {
-    if (stack == NULL)
-        return (1);
-    while (stack->next)
-    {
-        if (stack->value > stack->next->value)
-            return (false);
-        stack = stack->next;
-    }
-    return (true);
+	if (stack == NULL)
+		return (1);
+	while (stack->next)
+	{
+		if (stack->value > stack->next->value)
+			return (false);
+		stack = stack->next;
+	}
+	return (true);
 }
 
-static t_node   *find_biggest(t_node *stack)
+static t_node	*find_biggest(t_node *stack)
 {
-	int	biggest;
+	int		biggest;
 	t_node	*biggest_node;
 
 	if (stack == NULL)
@@ -28,7 +41,7 @@ static t_node   *find_biggest(t_node *stack)
 			biggest = stack->value;
 			biggest_node = stack;
 		}
-	stack = stack->next;
+		stack = stack->next;
 	}
 	return (biggest_node);
 }
@@ -45,7 +58,8 @@ void	sort_three(t_node **a)
 	if ((*a)->value > (*a)->next->value)
 		sa(a);
 }
-void	sort_five (t_node **a, t_node **b)
+
+void	sort_five(t_node **a, t_node **b)
 {
 	while (stack_len(*a) > 3)
 	{

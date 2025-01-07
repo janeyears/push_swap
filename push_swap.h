@@ -6,7 +6,7 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 12:17:40 by ekashirs          #+#    #+#             */
-/*   Updated: 2024/12/31 13:25:32 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/01/07 16:15:25 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PUSH_SWAP_H
 
 # include <stdbool.h>
-# include <limits.h>
 # include <stdlib.h>
 
 typedef struct s_node
@@ -36,14 +35,14 @@ char	**ft_split(char *str, char separator);
 void	free_2darray(char **argv);
 void	free_stack(t_node **stack);
 void	error_and_free(t_node **a, char **argv, bool flag_2_ac);
-int	error_syntax(char *c);
-int	check_duplicate(t_node *a, int nbr);
+int		error_syntax(char *c);
+int		check_duplicate(t_node *a, int nbr);
 
 //*** Creation of a stack ***
 
 void	init_a(t_node **a, char **argv, bool flag_2_ac);
 void	set_nodes(t_node *a, t_node *b);
-void	set_cheapest (t_node *b);
+void	set_cheapest(t_node *b);
 void	set_cost(t_node *a, t_node *b);
 void	set_cur_position(t_node *stack);
 
@@ -53,14 +52,14 @@ t_node	*find_last(t_node *lst);
 t_node	*find_smallest(t_node *stack);
 void	create_node(t_node **stack, int nbr);
 t_node	*return_cheapest(t_node *stack);
-int stack_len(t_node *stack);
+int		stack_len(t_node *stack);
 void	bring_to_top(t_node **stack, t_node *top_node, char stack_name);
 bool	sorted(t_node *stack);
 
 //*** Algorithm ***
 
 void	sort_three(t_node **a);
-void	sort_five (t_node **a, t_node **b);
+void	sort_five(t_node **a, t_node **b);
 void	push_swap(t_node **a, t_node **b);
 
 //*** Stacks moves ***

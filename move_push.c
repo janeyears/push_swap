@@ -6,7 +6,7 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 12:17:03 by ekashirs          #+#    #+#             */
-/*   Updated: 2024/12/31 13:23:30 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/01/07 12:46:31 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,14 @@ static void	push(t_node **dest, t_node **src)
 	}
 }
 
-void    pa(t_node **a, t_node **b)
+void	pa(t_node **a, t_node **b)
 {
 	push(a, b);
-	write (1, "pa\n", 3);
+	write(1, "pa\n", 3);
 }
 
-void    pb(t_node **b, t_node **a)
+void	pb(t_node **b, t_node **a)
 {
 	push(b, a);
-	write (1, "pb\n", 3);
+	write(1, "pb\n", 3);
 }

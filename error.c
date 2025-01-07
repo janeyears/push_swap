@@ -6,7 +6,7 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 15:51:37 by ekashirs          #+#    #+#             */
-/*   Updated: 2024/12/27 16:18:27 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/01/07 12:43:16 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@ void	error_and_free(t_node **a, char **argv, bool flag_2_ac)
 
 int	error_syntax(char *c)
 {
-	if (!(*c == '+'|| *c == '-'|| (*c >= '0' && *c <= '9')))
+	if (!(*c == '+' || *c == '-' || (*c >= '0' && *c <= '9')))
 		return (1);
-	if ((*c == '+'|| *c == '-') && !(c[1] >= '0' && c[1] <= '9'))
+	if ((*c == '+' || *c == '-') && !(c[1] >= '0' && c[1] <= '9'))
 		return (1);
 	while (*++c)
 	{
@@ -77,4 +77,3 @@ int	check_duplicate(t_node *a, int nbr)
 	}
 	return (0);
 }
-

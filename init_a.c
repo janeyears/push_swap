@@ -6,11 +6,12 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 14:33:06 by ekashirs          #+#    #+#             */
-/*   Updated: 2024/12/27 16:25:17 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/01/07 12:44:10 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <limits.h>
 
 t_node	*find_last(t_node *lst)
 {
@@ -20,9 +21,10 @@ t_node	*find_last(t_node *lst)
 		lst = lst->next;
 	return (lst);
 }
+
 t_node	*find_smallest(t_node *stack)
 {
-	long			smallest;
+	long	smallest;
 	t_node	*smallest_node;
 
 	if (stack == NULL)
@@ -72,7 +74,7 @@ void	create_node(t_node **stack, int nbr)
 {
 	t_node	*new_node;
 	t_node	*last_node;
-	
+
 	if (stack == NULL)
 		return ;
 	new_node = malloc(sizeof(t_node));
@@ -85,7 +87,7 @@ void	create_node(t_node **stack, int nbr)
 		*stack = new_node;
 		new_node->prev = NULL;
 	}
-	else 
+	else
 	{
 		last_node = find_last(*stack);
 		last_node->next = new_node;

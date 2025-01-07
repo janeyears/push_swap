@@ -6,7 +6,7 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 12:17:19 by ekashirs          #+#    #+#             */
-/*   Updated: 2024/12/31 13:09:26 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/01/07 12:46:50 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,21 @@ static void	reverse_rotate(t_node **stack)
 	last_node->next->prev = last_node;
 }
 
-void    rra(t_node **a)
+void	rra(t_node **a)
 {
 	reverse_rotate(a);
 	write(1, "rra\n", 4);
 }
 
-void    rrb(t_node **b)
+void	rrb(t_node **b)
 {
 	reverse_rotate(b);
 	write(1, "rrb\n", 4);
 }
 
-void    rrr(t_node **a, t_node **b)
+void	rrr(t_node **a, t_node **b)
 {
-    reverse_rotate(a);
+	reverse_rotate(a);
 	reverse_rotate(b);
 	write(1, "rrr\n", 4);
 }
