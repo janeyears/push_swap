@@ -6,12 +6,19 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 13:47:32 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/01/07 16:20:11 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/01/08 12:50:22 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stddef.h>
+#include <unistd.h>
+
+static void	error_message(void)
+{
+	write (2, "Error\n", 6);
+	exit(1);
+}
 
 static size_t	ft_countword(char const *s, char c)
 {
@@ -63,16 +70,16 @@ char	**ft_split(char *str, char separator)
 	i = 0;
 	words_number = ft_countword(str, separator);
 	if (!words_number)
-		exit(1);
+		error_message();
 	arr = malloc(sizeof(char *) * (size_t)(words_number + 2));
-	if (NULL == arr)
+	if (arr == NULL)
 		return (NULL);
 	while (words_number-- >= 0)
 	{
 		if (0 == i)
 		{
 			arr[i] = malloc(sizeof(char));
-			if (NULL == arr[i])
+			if (arr[i] == NULL)
 				return (NULL);
 			arr[i++][0] = '\0';
 			continue ;

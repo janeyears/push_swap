@@ -6,11 +6,12 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 12:16:56 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/01/07 12:44:35 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/01/08 11:52:42 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <unistd.h>
 
 int	main(int argc, char **argv)
 {
