@@ -6,12 +6,13 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 14:33:06 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/01/07 12:44:10 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/01/09 13:45:13 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <limits.h>
+#include <stdlib.h>
 
 t_node	*find_last(t_node *lst)
 {

@@ -6,13 +6,14 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 13:47:32 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/01/08 12:50:22 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/01/09 13:45:45 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stddef.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 static void	error_message(void)
 {

@@ -6,12 +6,13 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 11:57:42 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/01/07 16:19:11 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/01/09 13:45:31 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <limits.h>
+#include <stdlib.h>
 
 void	set_cur_position(t_node *stack)
 {

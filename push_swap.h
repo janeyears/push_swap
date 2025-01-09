@@ -6,7 +6,7 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 12:17:40 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/01/07 16:15:25 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/01/09 13:43:46 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PUSH_SWAP_H
 
 # include <stdbool.h>
-# include <stdlib.h>
 
 typedef struct s_node
 {

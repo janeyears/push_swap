@@ -6,11 +6,12 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 11:57:16 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/01/07 12:41:04 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/01/09 13:44:42 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdlib.h>
 
 int	stack_len(t_node *stack)
 {

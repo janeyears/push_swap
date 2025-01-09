@@ -6,12 +6,13 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 15:51:37 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/01/07 12:43:16 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/01/09 13:45:02 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <unistd.h>
+#include <stdlib.h>
 
 void	free_2darray(char **argv)
 {
