@@ -35,4 +35,5 @@ int	main(int argc, char **argv)
 			push_swap(&a, &b);
 	}
 	free_stack(&a);
+	return (0);
 }

@@ -4,7 +4,19 @@ FLAGS = -Wall -Wextra -Werror
 RM = rm -f
 INCLUDE = push_swap.h
 
-SRCS = $(wildcard *.c)
+SRCS = algorithm_utils.c \
+		algorithm.c \
+		error.c \
+		init_a.c \
+		main.c \
+		move_push.c \
+		move_rotate.c \
+		move_rrotate.c \
+		move_swap.c \
+		set_nodes.c \
+		sort_small.c \
+		split.c
+		
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
