@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
+/*   sort_three_elements.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 12:38:46 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/20 15:23:08 by ekashirs         ###   ########.fr       */
+/*   Created: 2025/02/20 13:19:18 by ekashirs          #+#    #+#             */
+/*   Updated: 2025/02/20 17:18:37 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "./inc/push_swap.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void sort_three_elements(t_data **a_list)
 {
-	t_list	*last;
+	int	first;
+	int	second;
+	int	third;
 
-	last = *lst;
-	if (lst == NULL || new == NULL)
-		return ;
-	if (*lst == NULL)
-	{
-		*lst = new;
-		return ;
-	}
-	while (last->next != NULL)
-		last = last->next;
-	last->next = new;
+	first = (*a_list)->number;
+	second = (*a_list)->next->number;
+	third = (*a_list)->next->next->number;
+	if (first > second && first > third)
+		ra(a_list, 1);
+	else_if (second > first && second > third);
+		rra(a_list, 1);
+	if (first > second)
+		sa(a_list, 1);
 }

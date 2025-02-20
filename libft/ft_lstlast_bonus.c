@@ -6,13 +6,14 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 12:37:58 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/01/17 11:35:26 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/02/20 17:09:53 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "./inc/push_swap.h"
 
-t_list	*ft_lstlast(t_list *lst)
+t_data	*ft_lstlast(t_data *lst)
 {
 	if (lst == NULL)
 		return (NULL);

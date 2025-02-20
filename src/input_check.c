@@ -6,7 +6,7 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 13:18:40 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/19 19:14:32 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/02/20 13:13:12 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int has_syntax_error(const char *str)
 	while (*str)
 	{
 		if (*str < '0' || *str > '9')
-			return 1;
+			return (1);
 		str++;
 	}
 	return (0);

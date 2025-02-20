@@ -6,7 +6,7 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 18:26:23 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/19 19:44:15 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/02/20 17:23:30 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,17 +49,17 @@ void	create_a_list(t_data **a_list, char **av, int ac)
 	while (av[i] != NULL)
 	{
 		if (has_syntax_error(av[i]))
-			error_free_exit("Wrong syntax", a_list, av, ac);
+			error_free_exit(a_list, av, ac);
 		value = ft_atol(av[i]);
 		if (int_overflow_check(value))
-			error_free_exit("Value is not an int", a_list, av, ac);
+			error_free_exit(a_list, av, ac);
 		int_value = (int)value;
 		if (has_dupes(a_list, int_value))
-			error_free_exit("Duplicate values", a_list, av, ac);
+			error_free_exit(a_list, av, ac);
 		if (create_data_node(a_list, int_value))
-			error_free_exit("Malloc for data_node has failed", a_list, av, ac);
+			error_free_exit(a_list, av, ac);
 		i++;
 	}
 	if (ac == 2)
-		cleanup_2darr(av);
+		cleanup_split(av, i);
 }
