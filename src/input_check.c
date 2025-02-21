@@ -6,7 +6,7 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 13:18:40 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/20 13:13:12 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/02/21 16:56:45 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,15 @@ int has_syntax_error(const char *str)
 		return (1);
 	if (*str == '+' || *str == '-')
 	{
-		if (*(str + 1) == '\0' || (*(str + 1) < '0' || *(str + 1) > '9'))
+		if (*(str + 1) == '\0' || !ft_isdigit(*(str + 1)))
 			return (1);
 		str++;
 	}
-	else if (*str < '0' || *str > '9')
+	else if (!ft_isdigit(*str))
 		return 1;
 	while (*str)
 	{
-		if (*str < '0' || *str > '9')
+		if (!ft_isdigit(*str))
 			return (1);
 		str++;
 	}
