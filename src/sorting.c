@@ -6,7 +6,7 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 15:11:48 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/21 18:04:53 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/02/21 22:36:23 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ static void	choose_instructions(t_data **a_list, t_data *smallest_number)
 	if (smallest_number->is_above_median == 0)
 	{
 		while(*a_list != smallest_number)
-			rra(a_list, 0);
+			rra(a_list, 1);
 	}
 	else
 	{
 		while(*a_list != smallest_number)
-			ra(a_list, 0);
+			ra(a_list, 1);
 	}
 }
 

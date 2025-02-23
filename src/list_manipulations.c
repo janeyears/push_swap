@@ -6,7 +6,7 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 18:04:07 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/21 19:24:51 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/02/23 23:14:13 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,10 +80,10 @@ void	assign_pairs(t_data *a_list, t_data *b_list)
 	while (b_list != NULL)
 	{
 		pair = return_best_pair(a_list, b_list);
-		if (pair != NULL)
-			b_list->pair = pair;
-		else
+		if (pair == NULL)
 			b_list->pair = return_smallest_node(a_list);
+		else
+			b_list->pair = pair;
 		b_list = b_list->next;
 	}
 }
