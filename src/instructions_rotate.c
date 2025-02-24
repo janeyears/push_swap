@@ -6,11 +6,11 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 15:11:25 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/20 17:04:32 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/02/24 17:23:15 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./inc/push_swap.h"
+#include "push_swap.h"
 
 static void	doubly_lstadd_back(t_data **lst, t_data *new)
 {

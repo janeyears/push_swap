@@ -6,11 +6,11 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:36:17 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/21 17:01:01 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/02/24 17:53:31 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./inc/push_swap.h"
+#include "push_swap.h"
 
 void	doubly_lstadd_front(t_data **lst, t_data *new)
 {
@@ -45,7 +45,7 @@ void	pb(t_data **b_list, t_data **a_list)
 		return ;
 	data_to_push = *a_list;
 	*a_list = (*a_list)->next;
-	double_lstadd_front(b_list, data_to_push);
+	doubly_lstadd_front(b_list, data_to_push);
 	if (*a_list)
 		(*a_list)->previous = NULL;
 	ft_printf("pb\n");

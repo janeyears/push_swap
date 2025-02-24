@@ -6,11 +6,12 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 18:04:07 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/23 23:14:13 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/02/24 17:23:22 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./inc/push_swap.h"
+#include "push_swap.h"
+#include "limits.h"
 
 t_data	*return_smallest_node(t_data *a_list)
 {
@@ -70,7 +71,24 @@ void	assign_index(t_data *a_list, t_data *b_list)
 }
 t_data	*return_best_pair(t_data *a_list, t_data *b_list)
 {
-	
+	t_data	*pair;
+	long	match;
+
+	pair = NULL;
+	match = LONG_MAX;
+
+	while (a_list != NULL)
+	{
+		if (a_list->number > b_list->number && a_list->number < match)
+		{
+			match = a_list->number;
+			pair = a_list;
+		}
+		a_list = a_list->next;
+	}
+	if (pair == NULL)
+		pair = return_smallest_node(a_list);
+	return(pair);
 }
 void	assign_pairs(t_data *a_list, t_data *b_list)
 {
@@ -80,10 +98,6 @@ void	assign_pairs(t_data *a_list, t_data *b_list)
 	while (b_list != NULL)
 	{
 		pair = return_best_pair(a_list, b_list);
-		if (pair == NULL)
-			b_list->pair = return_smallest_node(a_list);
-		else
-			b_list->pair = pair;
 		b_list = b_list->next;
 	}
 }

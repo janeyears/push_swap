@@ -6,11 +6,11 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:50:12 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/21 17:01:59 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/02/24 17:23:09 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./inc/push_swap.h"
+#include "push_swap.h"
 
 void	rra(t_data **a_list, int print_flag)
 {

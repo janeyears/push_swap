@@ -6,7 +6,7 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 11:36:10 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/18 17:51:49 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/02/24 17:42:54 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,7 @@ void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
-t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstnew(void *content);
-int		ft_lstsize(t_list *lst);
 
 char	*get_next_line(int fd);
 void	ft_extract_line(char **buffer, char **line, size_t len);

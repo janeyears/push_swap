@@ -6,11 +6,11 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 15:11:48 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/21 22:36:23 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/02/24 17:57:39 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./inc/push_swap.h"
+#include "push_swap.h"
 
 static void	choose_instructions(t_data **a_list, t_data *smallest_number)
 {
@@ -26,25 +26,24 @@ static void	choose_instructions(t_data **a_list, t_data *smallest_number)
 	}
 }
 
-void	finish_sorting(t_data **a_list)
+static void	finish_sorting(t_data **a_list)
 {
 	t_data	*smallest_number;
 	
 	smallest_number = return_smallest_node(*a_list);
-	choose_instruction(a_list, smallest_number);
+	choose_instructions(a_list, smallest_number);
 }
 
 void	sorting(t_data **a_list, t_data **b_list)
 {
-	while(ft_lstsize(a_list) != 3)
+	while(ft_lstsize(*a_list) != 3)
 		pb(b_list, a_list);
 	sort_three_elements(a_list);
-	while(ft_lstsize(b_list) != 0)
+	while(ft_lstsize(*b_list) != 0)
 	{
-		assign_index(a_list, b_list);
-		assign_pairs(a_list, b_list);
-		calculate_steps(a_list, b_list);
-		find_best_move(b_list);
+		assign_index(*a_list, *b_list);
+		assign_pairs(*a_list, *b_list);
+		calculate_steps_find_best(*a_list, *b_list);
 		push_back(a_list, b_list);
 	}
 	finish_sorting(a_list);

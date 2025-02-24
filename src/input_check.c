@@ -6,11 +6,11 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 13:18:40 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/21 16:56:45 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/02/24 18:11:52 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./inc/push_swap.h"
+#include "push_swap.h"
 #include <limits.h>
 
 int	has_dupes(t_data *a_list, int nb)
@@ -57,10 +57,13 @@ int	 is_list_sorted(t_data *a_list)
 {
 	if (!a_list)
 		return (1);
-	while(a_list->next != NULL)
+	while(a_list != NULL)
 	{
 		if(a_list->number > a_list->next->number)
+		{
+			ft_printf("list is not sorted");
 			return (1);
+		}
 		a_list = a_list->next;
 	}
 	return (0);

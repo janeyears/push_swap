@@ -6,11 +6,11 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 13:16:54 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/20 14:56:09 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/02/24 17:23:40 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./inc/push_swap.h"
+#include "push_swap.h"
 #include <unistd.h>
 #include <stdlib.h>
 
