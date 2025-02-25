@@ -6,7 +6,7 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 15:11:25 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/24 17:23:15 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/02/25 16:25:49 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,6 @@ void	rb(t_data **b_list, int print_flag)
 void	rr(t_data **a_list, t_data **b_list)
 {
 	ra(a_list, 0);
-	rb(b_list, 0);
+	rb(b_list, 0);	
 	ft_printf("rr\n");
 }

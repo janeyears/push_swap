@@ -6,7 +6,7 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 15:57:08 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/25 13:16:18 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/02/25 16:41:57 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ static void	rotate_both(t_data **a, t_data **b, t_data *best, char c)
 			rrr(a, b);
 	}
 }
-
 static void	put_first(t_data **a, t_data **b, t_data *b_best, t_data *a_best)
 {
 	while (*a != a_best)
@@ -54,21 +53,28 @@ static void	put_first(t_data **a, t_data **b, t_data *b_best, t_data *a_best)
 	}
 }
 
-void	push_back(t_data **a_list, t_data **b_list)
+void push_back(t_data **a_list, t_data **b_list)
 {
-	t_data	*best_node;
-	
+	t_data *best_node;
+
 	best_node = return_best_node(*b_list);
 	if (best_node == NULL)
 		return ;
-	if (best_node->is_above_median == best_node->pair->is_above_median)
+	if (best_node == *b_list && best_node->pair == *a_list) 
 	{
-		if (best_node->is_above_median == 1)
-			rotate_both(a_list, b_list, best_node, 'u');
+		pa(a_list, b_list);
+		return ;
+	}
+	if (best_node != *b_list && best_node->pair != *a_list)
+	{
+		if (best_node->is_above_median == best_node->pair->is_above_median)
+		{
+			if (best_node->is_above_median == 1)
+				rotate_both(a_list, b_list, best_node, 'u');
 		else
 			rotate_both(a_list, b_list, best_node, 'd');
+		}
 	}
-	else
-		put_first(a_list, b_list, best_node, best_node->pair);
+	put_first(a_list, b_list, best_node, best_node->pair);
 	pa(a_list, b_list);
 }

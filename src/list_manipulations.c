@@ -6,7 +6,7 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 18:04:07 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/25 13:11:51 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/02/25 18:39:20 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,47 +34,36 @@ t_data	*return_smallest_node(t_data *a_list)
 	}
 	return (smallest_node);
 }
-void	check_median(t_data	*list, int median, int index)
+
+static void	indexing_list(t_data *list, int median)
 {
-	if (index <= median)
+	int		i;
+	t_data	*tmp;
+
+	i = 0;
+	tmp = list;
+	while (tmp != NULL)
 	{
-		list->is_above_median = 1;
-	}
-		
-	else
-		list->is_above_median = 0;
+		tmp->index = i;
+		if (i <= median)
+			list->is_above_median = 1;
+		else
+			list->is_above_median = 0;
+		i++;
+		tmp = tmp->next;
+    }
 }
 void	assign_index(t_data *a_list, t_data *b_list)
 {
-	int		i;
-	int		j;
 	int		middle_a;
 	int		middle_b;
-	t_data	*tmp_a;
-	t_data	*tmp_b;
 
 	if (a_list == NULL || b_list == NULL)
 		return ;
-	tmp_a = a_list;
-	tmp_b = b_list;
 	middle_a = ft_lstsize(a_list) / 2;
 	middle_b = ft_lstsize(b_list) / 2;
-	i = 0;
-	while (tmp_a != NULL)
-	{
-		tmp_a->index = i; 
-		check_median(tmp_a, middle_a, i);
-		i++;
-		tmp_a = tmp_a->next;
-	}
-	j = 0;
-	while (tmp_b != NULL)
-	{
-		tmp_b->index = j;
-		check_median(tmp_b, middle_b, j);
-		j++;
-		tmp_b = tmp_b->next;
-	}
+	indexing_list(a_list, middle_a);
+	indexing_list(b_list, middle_b);
 }
 t_data *return_best_pair(t_data *a_list, t_data *b_list)
 {

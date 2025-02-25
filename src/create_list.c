@@ -6,13 +6,12 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 18:26:23 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/25 11:04:39 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/02/25 18:40:11 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdlib.h>
-
 
 static int	create_data_node(t_data **a_list, int value)
 {
@@ -51,7 +50,7 @@ void	create_a_list(t_data **a_list, char **av, int ac)
 	{
 		if (has_syntax_error(av[i]))
 			error_free_exit(a_list, av, ac);
-		value = atol(av[i]);
+		value = ft_atol(av[i], a_list, av, ac);
 		if (int_overflow_check(value))
 			error_free_exit(a_list, av, ac);
 		int_value = (int)value;

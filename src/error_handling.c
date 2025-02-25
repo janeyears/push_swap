@@ -6,7 +6,7 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 13:01:15 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/25 11:09:16 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/02/25 18:00:13 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,17 +41,16 @@ void	error_free_exit(t_data **a_list, char **av, int ac)
 void	free_list(t_data **a_list)
 {
 	t_data	*tmp;
-	t_data	*cur;
+	t_data	*current;
 
 	if (a_list == NULL || *a_list == NULL)
 		return ;
 
-	cur = *a_list;
-	while (cur)
+	current = *a_list;
+	while (current)
 	{
-		tmp = cur->next;
-		free(cur);
-		cur = tmp;
+		tmp = current->next;
+		free(current);
+		current = tmp;
 	}
-	*a_list = NULL;
 }

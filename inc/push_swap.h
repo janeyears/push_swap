@@ -6,7 +6,7 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 12:17:00 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/25 12:06:56 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/02/25 18:38:40 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	cleanup_split(char	**array);
 void	error_free_exit(t_data **a_list, char **av, int ac);
 int		has_dupes(t_data *a_list, int nb);
 int		has_syntax_error(const char *str);
-int		int_overflow_check(int value);
+int		int_overflow_check(long value);
 int		is_list_sorted(t_data *a_list);
 void	pb(t_data **b_list, t_data **a_list);
 void	pa(t_data **a_list, t_data **b_list);
@@ -58,9 +58,10 @@ void	push_back(t_data **a_list, t_data **b_list);
 t_data	*return_best_node(t_data *b_list);
 void	sorting(t_data **a_list, t_data **b_list);
 void	sort_three_elements(t_data **a_list);
-char	**split_parser(char const *str, char separator);
 int	ft_lstsize(t_data *lst);
 t_data	*ft_lstlast(t_data *lst);
 void	free_list(t_data **a_list);
+long	ft_atol(const char *str, t_data **a_list, char **av, int ac);
+
 
 #endif

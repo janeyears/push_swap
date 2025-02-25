@@ -6,7 +6,7 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 14:26:06 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/25 13:08:48 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/02/25 18:28:38 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ static void assign_best_move(t_data *b_list)
 		best_node->is_best_match = 1;
 	}
 }
-
 
 void	calculate_steps_find_best(t_data *a_list, t_data *b_list)
 {

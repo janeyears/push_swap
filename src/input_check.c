@@ -6,7 +6,7 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 13:18:40 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/25 11:16:50 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/02/25 16:26:47 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int has_syntax_error(const char *str)
 	}
 	return (0);
 }
-int int_overflow_check(int value)
+int int_overflow_check(long value)
 {
 	if (value > INT_MAX || value < INT_MIN)
 		return (1);
