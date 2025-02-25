@@ -6,7 +6,7 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 13:01:15 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/24 18:21:04 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/02/25 11:09:16 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	cleanup_split(char	**array)
 		free(array[i]);
 		i++;
 	}
-	free(array - 1);
+	free(array);
 }
 
 void	error_free_exit(t_data **a_list, char **av, int ac)

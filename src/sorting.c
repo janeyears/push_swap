@@ -6,7 +6,7 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 15:11:48 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/24 17:57:39 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/02/25 13:16:51 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	sorting(t_data **a_list, t_data **b_list)
 	while(ft_lstsize(*a_list) != 3)
 		pb(b_list, a_list);
 	sort_three_elements(a_list);
-	while(ft_lstsize(*b_list) != 0)
+	while(*b_list)
 	{
 		assign_index(*a_list, *b_list);
 		assign_pairs(*a_list, *b_list);

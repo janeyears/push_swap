@@ -6,7 +6,7 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 13:18:40 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/24 18:11:52 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/02/25 11:16:50 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,7 @@ int	 is_list_sorted(t_data *a_list)
 	while(a_list != NULL)
 	{
 		if(a_list->number > a_list->next->number)
-		{
-			ft_printf("list is not sorted");
 			return (1);
-		}
 		a_list = a_list->next;
 	}
 	return (0);

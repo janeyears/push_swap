@@ -17,9 +17,8 @@ SRCS = $(SRC_PATH)/main.c \
 		$(SRC_PATH)/instructions_swap.c \
 		$(SRC_PATH)/list_manipulations.c \
 		$(SRC_PATH)/pushing_back.c \
-		$(SRC_PATH)/sort_three_elements.c \
+		$(SRC_PATH)/misc.c \
 		$(SRC_PATH)/sorting.c \
-		$(SRC_PATH)/split_parser.c \
 
 SRC	= $(addprefix $(SRC_PATH), $(SRCS))
 OBJ = $(addprefix $(OBJ_PATH), $(notdir $(SRC:.c=.o)))

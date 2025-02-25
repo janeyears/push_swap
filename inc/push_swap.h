@@ -6,7 +6,7 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 12:17:00 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/24 17:51:51 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/02/25 12:06:56 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "libft.h"
+# include <stdio.h>
 
 typedef struct s_data
 {

@@ -6,7 +6,7 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 15:57:08 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/24 17:54:38 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/02/25 13:16:18 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ t_data	*return_best_node(t_data *b_list)
 	}
 	return (NULL);
 }
+
 static void	rotate_both(t_data **a, t_data **b, t_data *best, char c)
 {
 	while (*b != best && *a != best->pair)
@@ -34,18 +35,19 @@ static void	rotate_both(t_data **a, t_data **b, t_data *best, char c)
 			rrr(a, b);
 	}
 }
+
 static void	put_first(t_data **a, t_data **b, t_data *b_best, t_data *a_best)
 {
-	while(*a != a_best)
+	while (*a != a_best)
 	{
 		if (a_best->is_above_median == 1)
 			ra(a, 1);
 		else
 			rra(a, 1);
 	}
-	while(*b != b_best)
+	while (*b != b_best)
 	{
-		if(b_best->is_above_median == 1)
+		if (b_best->is_above_median == 1)
 			rb(b, 1);
 		else
 			rrb(b, 1);
