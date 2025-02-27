@@ -6,7 +6,7 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 13:18:40 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/25 16:26:47 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/02/27 15:06:05 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	has_dupes(t_data *a_list, int nb)
 {
 	if (!a_list)
 		return (0);
-	while(a_list != NULL)
+	while (a_list != NULL)
 	{
 		if (a_list->number == nb)
 			return (1);
@@ -25,7 +25,8 @@ int	has_dupes(t_data *a_list, int nb)
 	}
 	return (0);
 }
-int has_syntax_error(const char *str)
+
+int	has_syntax_error(const char *str)
 {
 	if (!str || *str == '\0')
 		return (1);
@@ -36,7 +37,7 @@ int has_syntax_error(const char *str)
 		str++;
 	}
 	else if (!ft_isdigit(*str))
-		return 1;
+		return (1);
 	while (*str)
 	{
 		if (!ft_isdigit(*str))
@@ -45,7 +46,8 @@ int has_syntax_error(const char *str)
 	}
 	return (0);
 }
-int int_overflow_check(long value)
+
+int	int_overflow_check(long value)
 {
 	if (value > INT_MAX || value < INT_MIN)
 		return (1);
@@ -53,13 +55,13 @@ int int_overflow_check(long value)
 		return (0);
 }
 
-int	 is_list_sorted(t_data *a_list)
+int	is_list_sorted(t_data *a_list)
 {
 	if (!a_list)
 		return (1);
-	while(a_list != NULL)
+	while (a_list->next != NULL)
 	{
-		if(a_list->number > a_list->next->number)
+		if (a_list->number > a_list->next->number)
 			return (1);
 		a_list = a_list->next;
 	}

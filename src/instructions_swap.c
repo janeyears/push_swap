@@ -6,13 +6,13 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 14:35:55 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/25 16:26:01 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/02/27 14:38:29 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa(t_data **a_list, int print_flag)
+void	sa(t_data **a_list)
 {
 	t_data	*temp;
 
@@ -26,31 +26,5 @@ void	sa(t_data **a_list, int print_flag)
 	if (temp->next != NULL)
 		temp->next->previous = temp;
 	temp->previous = *a_list;
-	if (print_flag)
-		ft_printf("sa\n");
-}
-
-void	sb(t_data **b_list, int print_flag)
-{
-	t_data	*temp;
-
-	if (*b_list == NULL || (*b_list)->next == NULL)
-		return ;
-	temp = *b_list;
-	*b_list = (*b_list)->next;
-	temp->next = (*b_list)->next;
-	(*b_list)->next = temp;
-	(*b_list)->previous = NULL;
-	if (temp->next != NULL)
-		temp->next->previous = temp;
-	temp->previous = *b_list;
-	if (print_flag)
-		ft_printf("sb\n");
-}
-
-void	ss(t_data **a_list, t_data **b_list)
-{
-	sa(a_list, 0);
-	sb(b_list, 0);	
-	ft_printf("ss\n");
+	ft_printf("sa\n");
 }

@@ -6,7 +6,7 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 18:26:23 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/25 18:40:11 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/02/27 14:13:52 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	create_data_node(t_data **a_list, int value)
 
 	if (!a_list)
 		return (1);
-	new_node = malloc(sizeof(t_data));
+	new_node = ft_calloc(1, sizeof(t_data));
 	if (new_node == NULL)
 		return (1);
 	new_node->next = NULL;

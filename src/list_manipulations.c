@@ -6,7 +6,7 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 18:04:07 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/25 18:39:20 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/02/27 16:10:33 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,14 @@ static void	indexing_list(t_data *list, int median)
 	{
 		tmp->index = i;
 		if (i <= median)
-			list->is_above_median = 1;
+			tmp->is_above_median = 1;
 		else
-			list->is_above_median = 0;
+			tmp->is_above_median = 0;
 		i++;
 		tmp = tmp->next;
-    }
+	}
 }
+
 void	assign_index(t_data *a_list, t_data *b_list)
 {
 	int		middle_a;
@@ -65,7 +66,8 @@ void	assign_index(t_data *a_list, t_data *b_list)
 	indexing_list(a_list, middle_a);
 	indexing_list(b_list, middle_b);
 }
-t_data *return_best_pair(t_data *a_list, t_data *b_list)
+
+static t_data	*return_best_pair(t_data *a_list, t_data *b_list)
 {
 	t_data	*pair;
 	long	match;
@@ -73,8 +75,7 @@ t_data *return_best_pair(t_data *a_list, t_data *b_list)
 
 	pair = NULL;
 	match = LONG_MAX;
-	tmp = a_list; 
-
+	tmp = a_list;
 	while (tmp != NULL)
 	{
 		if (tmp->number > b_list->number && tmp->number < match)
@@ -88,9 +89,11 @@ t_data *return_best_pair(t_data *a_list, t_data *b_list)
 		pair = return_smallest_node(a_list);
 	return (pair);
 }
+
 void	assign_pairs(t_data *a_list, t_data *b_list)
 {
 	t_data	*pair;
+
 	if (a_list == NULL || b_list == NULL)
 		return ;
 	while (b_list != NULL)

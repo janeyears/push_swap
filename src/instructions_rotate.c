@@ -6,34 +6,11 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 15:11:25 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/25 16:25:49 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/02/27 15:07:08 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static void	doubly_lstadd_back(t_data **lst, t_data *new)
-{
-	t_data	*last;
-
-	if(new == NULL || lst == NULL)
-		return ;
-	if (*lst == NULL)
-	{
-		*lst = new;
-		(*lst)->next = NULL;
-		(*lst)->previous = NULL;
-	}
-	else
-	{
-		last = *lst;
-		while (last->next != NULL)
-			last = last->next;
-		last->next = new;
-		new->previous = last;
-		new->next = NULL;
-	}
-}
 
 void	ra(t_data **a_list, int print_flag)
 {
@@ -72,6 +49,6 @@ void	rb(t_data **b_list, int print_flag)
 void	rr(t_data **a_list, t_data **b_list)
 {
 	ra(a_list, 0);
-	rb(b_list, 0);	
+	rb(b_list, 0);
 	ft_printf("rr\n");
 }

@@ -6,28 +6,17 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:36:17 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/25 16:25:09 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/02/27 15:06:25 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	doubly_lstadd_front(t_data **lst, t_data *new)
-{
-	if (lst == NULL || new == NULL)
-		return ;
-	new->next = *lst;
-	if(*lst)
-		(*lst)->previous = new;
-	new->previous = NULL;
-	*lst = new;
-}
-
 void	pa(t_data **a_list, t_data **b_list)
 {
 	t_data	*data_to_push;
 
-	if(*b_list == NULL)
+	if (*b_list == NULL)
 		return ;
 	data_to_push = *b_list;
 	*b_list = (*b_list)->next;
@@ -41,7 +30,7 @@ void	pb(t_data **b_list, t_data **a_list)
 {
 	t_data	*data_to_push;
 
-	if(*a_list == NULL)
+	if (*a_list == NULL)
 		return ;
 	data_to_push = *a_list;
 	*a_list = (*a_list)->next;
