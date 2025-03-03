@@ -6,12 +6,11 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 18:26:23 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/27 14:13:52 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/02/28 11:45:22 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdlib.h>
 
 static int	create_data_node(t_data **a_list, int value)
 {

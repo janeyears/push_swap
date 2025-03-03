@@ -6,7 +6,7 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 12:17:00 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/27 14:45:37 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/02/28 11:00:27 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,15 @@ void	rb(t_data **b_list, int print_flag);
 void	ra(t_data **a_list, int print_flag);
 void	sa(t_data **a_list);
 
+void	sort_three_elements(t_data **a_list);
+void	sort_four_elements(t_data **a_list, t_data **b_list);
+void	sort_five_elements(t_data **a_list, t_data **b_list);
+
 void	assign_pairs(t_data *a_list, t_data *b_list);
 void	assign_index(t_data *a_list, t_data *b_list);
 t_data	*return_smallest_node(t_data *a_list);
 void	push_back(t_data **a_list, t_data **b_list);
 void	sorting(t_data **a_list, t_data **b_list);
-void	sort_three_elements(t_data **a_list);
 void	calculate_steps_find_best(t_data *a_list, t_data *b_list);
 
 int		ft_lstsize(t_data *lst);
