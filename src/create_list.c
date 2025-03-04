@@ -6,7 +6,7 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 18:26:23 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/28 11:45:22 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/03/03 12:18:50 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	create_data_node(t_data **a_list, int value)
 {
 	t_data	*new_node;
-	t_data	*prev_node;
+	t_data	*last_node;
 
 	if (!a_list)
 		return (1);
@@ -27,13 +27,11 @@ static int	create_data_node(t_data **a_list, int value)
 	if (*a_list == NULL)
 	{
 		*a_list = new_node;
-		new_node->previous = NULL;
 	}
 	else
 	{
-		prev_node = ft_lstlast(*a_list);
-		prev_node->next = new_node;
-		new_node->previous = prev_node;
+		last_node = ft_lstlast(*a_list);
+		last_node->next = new_node;
 	}
 	return (0);
 }

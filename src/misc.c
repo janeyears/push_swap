@@ -6,7 +6,7 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:19:18 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/28 10:59:05 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/03/03 12:36:32 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,36 +68,27 @@ long	ft_atol(const char *str, t_data **a_list, char **av, int ac)
 	return (num * sign);
 }
 
-void	doubly_lstadd_front(t_data **lst, t_data *new)
+void	ps_lstadd_front(t_data **lst, t_data *new)
 {
-	if (lst == NULL || new == NULL)
+	if (!lst || !new)
 		return ;
 	new->next = *lst;
-	if (*lst)
-		(*lst)->previous = new;
-	new->previous = NULL;
 	*lst = new;
 }
 
-void	doubly_lstadd_back(t_data **lst, t_data *new)
+void	ps_lstadd_back(t_data **lst, t_data *new)
 {
 	t_data	*last;
 
-	if (new == NULL || lst == NULL)
+	last = *lst;
+	if (lst == NULL || new == NULL)
 		return ;
 	if (*lst == NULL)
 	{
 		*lst = new;
-		(*lst)->next = NULL;
-		(*lst)->previous = NULL;
+		return ;
 	}
-	else
-	{
-		last = *lst;
-		while (last->next != NULL)
-			last = last->next;
-		last->next = new;
-		new->previous = last;
-		new->next = NULL;
-	}
+	while (last->next != NULL)
+		last = last->next;
+	last->next = new;
 }

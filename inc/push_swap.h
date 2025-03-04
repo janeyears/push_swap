@@ -6,7 +6,7 @@
 /*   By: ekashirs <ekashirs@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 12:17:00 by ekashirs          #+#    #+#             */
-/*   Updated: 2025/02/28 11:00:27 by ekashirs         ###   ########.fr       */
+/*   Updated: 2025/03/03 12:35:45 by ekashirs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ typedef struct s_data
 	int				is_above_median;
 	int				is_best_match;
 	struct s_data	*pair;
-	struct s_data	*previous;
 	struct s_data	*next;
 }	t_data;
 
@@ -63,6 +62,6 @@ int		ft_lstsize(t_data *lst);
 t_data	*ft_lstlast(t_data *lst);
 void	free_list(t_data **a_list);
 long	ft_atol(const char *str, t_data **a_list, char **av, int ac);
-void	doubly_lstadd_back(t_data **lst, t_data *new);
-void	doubly_lstadd_front(t_data **lst, t_data *new);
+void	ps_lstadd_back(t_data **lst, t_data *new);
+void	ps_lstadd_front(t_data **lst, t_data *new);
 #endif
