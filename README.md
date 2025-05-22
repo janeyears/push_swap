@@ -16,6 +16,7 @@ The objective of push_swap is to sort data on a stack with the least number of o
 ## 🔧 Compilation & Usage
 
 The project includes a `Makefile` for easy compilation.
+
 ./push_swap 3 2 1
 
 ## 🧠 What I Learned
@@ -23,3 +24,4 @@ The project includes a `Makefile` for easy compilation.
 - Implementing and optimizing sorting algorithms.
 - Managing data using stacks and understanding their operations.
 - Using linked lists on practice.
+
